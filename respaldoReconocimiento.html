@@ -1,0 +1,45 @@
+<div class="row encabezado-aseguradoras">
+        <div class="col-lg-12">
+            <!--img align="left" style="" src="img/reconocimiento.png" id="imgPalomita"-->
+            <span><strong>Reconocimiento</strong></span>
+        </div>
+    </div>
+    <div :id="rec" class=" box row">
+        <div>
+            <form :id="formvalidacion" name="formulariovalidacion">
+                <!--@@ Agregado por Catalina -->
+                <!--Input para mostrar y editar la placa-->
+                <div name="caracteres" style="display:grid">
+                    <input type="text"  name="PlacaEdit" id="idEdit" maxlength="8" minlength="5" onclick="valida()"  class="uppercase" >
+                </div>
+                <!--Fin de input para mostrar y editar la placa-->
+                <div>
+                    <input id="textmotivos" name="textmotivos" class="esconder texto-contenedor" placeholder="Introduce los motivos" onclick="valida()">
+                </div>
+                <!--++++++++++++++++++++++++++++++++++++++++++-->
+                <!-- BOTONES "DESCARTAR", "FIRMAR" y "EDITAR" -->
+                <!--++++++++++++++++++++++++++++++++++++++++++-->
+                <div class="row rowButtons">
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4" name="btnform-descartar2" id="btnDivDescartar">
+                        <button class="btn btn-defaul btn-md" id="buttondescartar2" name="buttondescartar2" type="button" onclick="descarta();"> Descartar </button>
+                        <!-- MENSAJES DE VALIDACIÓN -->
+                        <div class="errorPlaca" style="margin-top: 5%; margin-left: 10%;" >
+                            <label :id="msjerror" class="error esconder"></label>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"  name="btnform-firmar" id="btncambiar">
+                        <button class="btn btn-default botonExportar btn-md" id="buttonfirmar" name="buttonfirmar" onblur="valestatus(-1)" onclick="valestatus(3);enviaForm();"
+                        > &nbsp; Firmar &nbsp;</button>
+                        <input type="hidden" name="valores" id="valores">
+                        <input type="hidden" name="estatus" id="estatus">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4 col-sm-4"  name="btnform-edicion"i d="refcambiar"  >
+                        <button class="btn btn-default botonExportar btn-md pull-right" id="buttoneditar"  style="border-radius: 2px;" onclick="editable();">Editar</button>
+                    </div>
+                    <div>
+                        <label :id="msjerror" class="error esconder"></label>
+                    </div>
+                </div>
+            </form> <!--Fin del formulario-->
+        </div>
+    </div>
